@@ -34,11 +34,13 @@ function onInput(e) {
         const listMarkup = countries.map(country => listCountry(country));
         refs.countryList.innerHTML = listMarkup.join('');
         refs.countryInfo.innerHTML = '';
+        //    addList(countries)
       }
       if (countries.length === 1) {
         const markup = countries.map(country => cardCountry(country));
         refs.countryList.innerHTML = '';
         refs.countryInfo.innerHTML = markup.join('');
+        //   addCountryInfo(countries)
       }
     })
     .catch(error => {
@@ -47,6 +49,15 @@ function onInput(e) {
       return error;
     });
 }
+// function addList(countries) {
+//   const markup = countries.map(country => listCountry(country)).join('');
+//   refs.countryList.innerHTML = markup;
+// }
+
+// function addCountryInfo(countries) {
+//   const markup = countries.map(country => cardCountry(country)).join('');
+//   refs.countryInfo.innerHTML = markup;
+// }
 // функція, яка очищує розмітку
 function clearMarkup() {
   refs.countryList.innerHTML = '';
